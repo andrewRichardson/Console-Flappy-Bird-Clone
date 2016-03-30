@@ -22,16 +22,15 @@ int main() {
 	int playerY = (maxHeight - 1) / 2;
 
 	// Obstacle variables
-	int obstacleSpread = 5;
-	int obsLength = maxWidth / (obstacleSpread + obstacleArt.length);
-	int* obstacleY = new int[obsLength]; //Top of opening of size: openingSize
+	int obstacleSpread = 9;
+	int obsLength = maxWidth / (obstacleSpread + obstacleArt.length());
+	int *obstacleY = new int[obsLength]; //Top of opening of size: openingSize
 	int openingSize = 3;
 	int minObsY = 3;
 	int maxObsY = maxHeight - 3 - openingSize;
-	int obsIndex = 0;
 
 	// Scrolling variables
-	int scrollIndex = 0;
+	int *scrollIndex = new int[obsLength];
 	int scrollSpeed = 1;
 
 	// Input timing variables
@@ -56,6 +55,11 @@ int main() {
 		if (!hasStarted) {
 			hasStarted = true;
 			startTime = clock()/1000.0;
+
+			for (int i = 0; i < obsLength; i++) {
+				obstacleY[i] = (int)(((double)rand() / RAND_MAX) * (double)(maxObsY - minObsY));
+				scrollIndex[i] = maxWidth + obstacleArt.length();
+			}
 		}
 		double deltaTime = previousTime - time;
 		time = clock();
@@ -74,7 +78,7 @@ int main() {
 			convDT--;
 			string output = "";
 			system("cls");
-			cout << "  Time: "  << totalTime << " \t|   Velocity: " << velY << "\n";
+			cout << "  Time: "  << totalTime << " \t|   Velocity: " << -velY << "\n";
 
 			// Key parsing
 			if (key == 'w' && !hasPressedKey) {
@@ -104,29 +108,35 @@ int main() {
 				playerY = maxHeight - 1;
 
 			// Obstacle logic
-			obstacleY[obsIndex] = (rand() / RAND_MAX) * (maxObsY - minObsY);
-
+			for (int i = 0; i < obsLength; i++) {
+				scrollIndex[i] -= scrollSpeed;
+				if (scrollIndex[i] <= 0) {
+					scrollIndex[i] = maxWidth + obstacleArt.length();
+					obstacleY[i] = (int)(((double)rand() / RAND_MAX) * (double)(maxObsY - minObsY));
+				}
+			}
 			// Calculate graphics
-			for (int i = 0; i < playerY; i++) {
-				for (int j = 0; j < maxWidth; j++) {
-					output += spaceChar;
+			for (int y = 0; y < maxHeight; y++) {
+				for (int x = 0; x < maxWidth; x++) {
+					bool sflag = false;
+					for (int i = 0; i < obsLength; i++) {
+						if (x == scrollIndex[i] && (y < obstacleY[i] || y >= obstacleY[i] + openingSize)) {
+							output += obstacleArt;
+							x += obstacleArt.length() - 1;
+							i = obsLength;
+						}
+						else {
+							sflag = true;
+						}
+					}
+					if (sflag) {
+						output += spaceChar;
+					}
 				}
 				output += "\n";
 			}
-			for (int i = 0; i < maxWidth/4; i++) {
-				output += spaceChar;
-			}
-			output += playerArt;
-			for (int i = 0; i < maxWidth/4*3; i++) {
-				output += spaceChar;
-			}
-			output += "\n";
-			for (int i = 0; i < maxHeight-playerY-1; i++) {
-				for (int j = 0; j < maxWidth; j++) {
-					output += spaceChar;
-				}
-				output += "\n";
-			}
+			int playerPos = playerY*(maxWidth+1) + maxWidth / 4;
+			output.replace(playerPos, 1, playerArt);
 			output += "\n";
 
 			cout << output;
