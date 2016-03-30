@@ -1,15 +1,3 @@
 ﻿  Main.cpp
-c:\users\andya\documents\visual studio 2015\projects\consolegame\consolegame\main.cpp(76): error C2065: 'yt': undeclared identifier
-c:\users\andya\documents\visual studio 2015\projects\consolegame\consolegame\main.cpp(77): error C2065: 'yb': undeclared identifier
-c:\users\andya\documents\visual studio 2015\projects\consolegame\consolegame\main.cpp(79): error C2065: 'yt': undeclared identifier
-c:\users\andya\documents\visual studio 2015\projects\consolegame\consolegame\main.cpp(80): error C2065: 'yt': undeclared identifier
-c:\users\andya\documents\visual studio 2015\projects\consolegame\consolegame\main.cpp(81): error C2065: 'yb': undeclared identifier
-c:\users\andya\documents\visual studio 2015\projects\consolegame\consolegame\main.cpp(82): error C2065: 'yb': undeclared identifier
-c:\users\andya\documents\visual studio 2015\projects\consolegame\consolegame\main.cpp(83): error C2065: 'yt': undeclared identifier
-c:\users\andya\documents\visual studio 2015\projects\consolegame\consolegame\main.cpp(84): error C2065: 'yt': undeclared identifier
-c:\users\andya\documents\visual studio 2015\projects\consolegame\consolegame\main.cpp(85): error C2065: 'yb': undeclared identifier
-c:\users\andya\documents\visual studio 2015\projects\consolegame\consolegame\main.cpp(86): error C2065: 'yb': undeclared identifier
-c:\users\andya\documents\visual studio 2015\projects\consolegame\consolegame\main.cpp(88): error C2065: 'yt': undeclared identifier
-c:\users\andya\documents\visual studio 2015\projects\consolegame\consolegame\main.cpp(94): error C2065: 'xl': undeclared identifier
-c:\users\andya\documents\visual studio 2015\projects\consolegame\consolegame\main.cpp(98): error C2065: 'xr': undeclared identifier
-c:\users\andya\documents\visual studio 2015\projects\consolegame\consolegame\main.cpp(102): error C2065: 'yb': undeclared identifier
+  ConsoleGame.vcxproj -> D:\Everything\GitHub\Console-Flappy-Bird-Clone\ConsoleGame\Debug\ConsoleGame.exe
+  ConsoleGame.vcxproj -> D:\Everything\GitHub\Console-Flappy-Bird-Clone\ConsoleGame\Debug\ConsoleGame.pdb (Partial PDB)
