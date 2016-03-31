@@ -1,2 +1,4 @@
-﻿  ConsoleGame.vcxproj -> D:\Everything\GitHub\Console-Flappy-Bird-Clone\ConsoleGame\Debug\ConsoleGame.exe
+﻿  Main.cpp
+d:\everything\github\console-flappy-bird-clone\consolegame\consolegame\main.cpp(133): warning C4018: '<=': signed/unsigned mismatch
+  ConsoleGame.vcxproj -> D:\Everything\GitHub\Console-Flappy-Bird-Clone\ConsoleGame\Debug\ConsoleGame.exe
   ConsoleGame.vcxproj -> D:\Everything\GitHub\Console-Flappy-Bird-Clone\ConsoleGame\Debug\ConsoleGame.pdb (Partial PDB)
