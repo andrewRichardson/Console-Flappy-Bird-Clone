@@ -8,10 +8,6 @@ int main() {
 	int maxHeight = 21;
 	string playerArt = "#";
 	string obstacleArt = "!!!";
-	/*int xl = (maxWidth- playerArt.length)/4;
-	int xr = (maxWidth- playerArt.length)/4*3;
-	int yt = (maxHeight - 1) / 2;
-	int yb = (maxHeight - 1) / 2;*/
 	string spaceChar = ".";
 
 	// Player variables
@@ -45,7 +41,7 @@ int main() {
 	time = clock();
 	double startTime;
 	bool hasStarted = false;
-	double fps = 24.0;
+	double fps = 12.0;
 	double convDT = 0.0;
 	double totalTime = 0.0;
 	
@@ -122,6 +118,15 @@ int main() {
 				if (scrollIndex[i] <= temp) {
 					scrollIndex[i] = maxWidth;
 					obstacleY[i] = (int)(((double)rand() / RAND_MAX) * (double)(maxObsY - minObsY))+minObsY;
+				}
+			}
+
+			// Collision logic
+			for (int i = 0; i < obsLength; i++){
+				if (scrollIndex[i] <= maxWidth / 4 && scrollIndex[i] > maxWidth / 4 - obstacleArt.length()) {
+					if (playerY < obstacleY[i] || playerY >= obstacleY[i] + openingSize) {
+						cout << "PLAYER HIT! ";// << obstacleY[i] << " : " << playerY << "\n";
+					}
 				}
 			}
 

@@ -1,4 +1,5 @@
 ﻿  Main.cpp
-d:\everything\github\console-flappy-bird-clone\consolegame\consolegame\main.cpp(133): warning C4018: '<=': signed/unsigned mismatch
-  ConsoleGame.vcxproj -> D:\Everything\GitHub\Console-Flappy-Bird-Clone\ConsoleGame\Debug\ConsoleGame.exe
-  ConsoleGame.vcxproj -> D:\Everything\GitHub\Console-Flappy-Bird-Clone\ConsoleGame\Debug\ConsoleGame.pdb (Partial PDB)
+c:\users\andrew\documents\github\console-flappy-bird-clone\consolegame\consolegame\main.cpp(138): warning C4018: '<=': signed/unsigned mismatch
+  LINK : C:\Users\Andrew\Documents\GitHub\Console-Flappy-Bird-Clone\ConsoleGame\Debug\ConsoleGame.exe not found or not built by the last incremental link; performing full link
+  ConsoleGame.vcxproj -> C:\Users\Andrew\Documents\GitHub\Console-Flappy-Bird-Clone\ConsoleGame\Debug\ConsoleGame.exe
+  ConsoleGame.vcxproj -> C:\Users\Andrew\Documents\GitHub\Console-Flappy-Bird-Clone\ConsoleGame\Debug\ConsoleGame.pdb (Partial PDB)
